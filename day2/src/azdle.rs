@@ -19,6 +19,8 @@ const INPUT: &str = "\
 4463	4757	201	186	3812	2413	2085	4685	5294	5755	2898	200	5536	5226	1028	180";
 
 fn main() {
+    // Part #1
+
     // Parse Input
     let rows = INPUT.split('\n').map(
         |row| row.split('\t').map(
@@ -38,5 +40,34 @@ fn main() {
         checksum += row_max - row_min;
     }
 
-    println!("checksum: {}", checksum);
+    println!("largest difference checksum: {}", checksum);
+
+    // Part #2
+    // gross & inefficient, but it works
+
+    // Parse Input (Again)
+    let rows = INPUT.split('\n').map(
+        |row| row.split('\t').map(
+            |item| item.parse::<u64>().unwrap()));
+
+    let mut checksum = 0u64;
+
+    for row in rows {
+        // collect so we can walk this many times
+        let row: Vec<u64> = row.collect();
+
+        for item in &row {
+            for cmp in &row {
+                let val = match (item, cmp) {
+                    (a, b) if a > b && a % b == 0 => a / b,
+                    (a, b) if a < b && b % a == 0 => b / a,
+                    _ => 0,
+                };
+
+                if val != 0 { checksum += val };
+            }
+        }
+    }
+
+    println!("divisor checksum: {}", checksum/2);
 }
