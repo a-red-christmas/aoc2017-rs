@@ -3,7 +3,7 @@ use std::collections::BTreeMap;
 const DEST: i64 = 361527;
 
 fn main() {
-    // Part 2 -- Don't build, calculate.
+    // Part 1 -- Don't build, calculate.
     println!("Part 1");
     let v = DEST as f64;
 
