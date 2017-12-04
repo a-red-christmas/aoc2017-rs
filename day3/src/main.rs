@@ -36,7 +36,7 @@ fn main() {
 
         let sector_len = if ring == 0 { 0 } else { (ring*2)-1 };
 
-        // sector 1
+        // sector 0
         for _ in 0..sector_len-1 {
             x += 1;
 
@@ -45,7 +45,7 @@ fn main() {
             println!("x: {}, y: {}, sum: {}", x, y, last_sum);
         }
 
-        // sector 2
+        // sector 1
         for _ in 0..sector_len {
             y -= 1;
 
