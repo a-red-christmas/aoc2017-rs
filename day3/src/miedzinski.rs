@@ -67,7 +67,7 @@ fn part1() -> usize {
     let mut turn = 1;
     let mut steps = 1;
 
-    'outer: while n <= INPUT {
+    'outer: loop {
         for _ in 0..steps {
             pos.step();
             n += 1;
