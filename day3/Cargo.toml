@@ -1,6 +1,13 @@
 [package]
 name = "day3"
 version = "0.1.0"
-authors = ["Patrick Barrett <patrick@psbarrett.com>"]
+authors = [
+    "Patrick Barrett <patrick@psbarrett.com>",
+    "Dominik Miedzinski <dominik@mdzn.pl>",
+]
+
+[[bin]]
+name = "miedzinski"
+path = "src/miedzinski.rs"
 
 [dependencies]
