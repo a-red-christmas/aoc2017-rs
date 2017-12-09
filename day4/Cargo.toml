@@ -3,4 +3,8 @@ name = "day04"
 version = "0.1.0"
 authors = ["Dominik Miedziński <dominik@mdzn.pl>"]
 
+[[bin]]
+name = "azdle"
+path = "src/azdle.rs"
+
 [dependencies]
